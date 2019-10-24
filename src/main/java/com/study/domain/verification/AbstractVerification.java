@@ -5,8 +5,9 @@ import com.study.domain.Payment;
 public abstract class AbstractVerification {
     private AbstractVerification next;
 
-    public void linkNext(AbstractVerification next) {
+    public AbstractVerification linkNext(AbstractVerification next) {
         this.next = next;
+        return next;
     }
 
     public abstract boolean check(Payment payment);

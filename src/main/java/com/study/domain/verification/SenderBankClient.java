@@ -12,9 +12,13 @@ public class SenderBankClient extends AbstractVerification {
 
     @Override
     public boolean check(Payment payment) {
-        if (bank.getUsers().contains(payment.getNamePersonWhoSend())){
+        if (bank.getUsers()
+                .contains(
+                        payment.getNamePersonWhoSend())) {
+            System.out.println("Person is a client of bank");
             return checkNext(payment);
         }
+        System.out.println("Person is not bank client");
         return false;
     }
 }

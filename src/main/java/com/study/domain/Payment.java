@@ -27,4 +27,8 @@ public class Payment {
     public boolean isAuthorized(){
         return authorized;
     }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 }

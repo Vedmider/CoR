@@ -10,7 +10,7 @@ public class Bank {
     private AbstractVerification benefitVerification;
     private AbstractVerification internalVerification;
     private List<String> users;
-    private boolean isInternationalLicensed;
+    private boolean isInternationalLicensed = true;
 
     public void setBenefitVerification(AbstractVerification benefitVerification) {
         this.benefitVerification = benefitVerification;
@@ -51,21 +51,21 @@ public class Bank {
         return false;
     }
 
-    public boolean makeDomesticVerification(Payment payment) {
+    public boolean makeDomesticPayment(Payment payment) {
         if (domesticVerification.check(payment)) {
             return true;
         }
         return false;
     }
 
-    public boolean makeBenefitVerification(Payment payment) {
+    public boolean makeBenefitPayment(Payment payment) {
         if (benefitVerification.check(payment)) {
             return true;
         }
         return false;
     }
 
-    public boolean makeInternalVerification(Payment payment) {
+    public boolean makeInternalBankPayment(Payment payment) {
         if (internalVerification.check(payment)) {
             return true;
         }
